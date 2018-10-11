@@ -64,10 +64,13 @@ public class ChooseAreaFragment extends Fragment{
         backButton=(Button)view.findViewById(R.id.back_button);
         listView=(ListView)view.findViewById(R.id.list_view);
 
+
         adapter=new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,dataList);
         listView.setAdapter(adapter);
+
         return view;
     }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
@@ -114,11 +117,13 @@ public class ChooseAreaFragment extends Fragment{
 
     /***queryProvinces cities******/
 
+
     private void queryProvinces()
     {
        titleText.setText("中国");
        backButton.setVisibility(View.GONE);
        provinceList= DataSupport.findAll(Province.class);
+
 
        if(provinceList.size()>0)
        {
